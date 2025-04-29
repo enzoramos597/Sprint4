@@ -30,7 +30,18 @@
                 method:'put',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ 
-                nombreSuperHeroe: document.getElementById('Nombre').value,    
+                    body: JSON.stringify({ 
+                        nombreSuperHeroe,
+                        nombreReal,
+                        edad,
+                        planetaOrigen,
+                        debilidad,
+                        poderes,  // ✅ Ahora es el array que ya habías separado antes
+                        aliados,  // ✅ Array también
+                        enemigos, // ✅ Array también
+                        creador
+})
+                /*nombreSuperHeroe: document.getElementById('Nombre').value,    
                 nombreReal: document.getElementById('NombreReal').value, 
                 edad: document.getElementById('Edad').value,                 
                 planetaOrigen: document.getElementById('planetaorigen').value,
@@ -38,8 +49,7 @@
                 poderes: document.getElementById('Poderes').value,
                 aliados: document.getElementById('Aliados').value,
                 enemigos: document.getElementById('Enemigos').value,
-                creador: document.getElementById('Creador').value,
-                
+                creador: document.getElementById('Creador').value, */               
             })
             
             }

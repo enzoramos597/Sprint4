@@ -30,8 +30,8 @@ export async function modificarSuperHeroeporEdad(id, atributo, valor) {
     return await SuperHeroRepository.modificarSuperHeroeporEdad(id, atributo, valor);
 }
 
-export async function modificarSuperHeroeService(id, datosActualizados){
-    return await SuperHeroRepository.updateRepository1SuperHereo(id, datosActualizados);
+export async function modificarSuperHeroeService(id, updateSP){
+    return await SuperHeroRepository.updateRepositorySuperHereo(id, updateSP);
 }
 
 export async function eliminarSuperHereoPorId(id) {

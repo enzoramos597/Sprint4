@@ -77,13 +77,23 @@ class SuperHeroRepository extends IRepository {
         return updateSuperHeroe;
       }
 
-    async updateRepositorySuperHereo(id, nombreSuperHeroe, nombreReal, edad, planetaOrigen, debilidad, poderes, aliados, enemigos, creador) {
-        console.log('Traer el superheroe Repository', nombreSuperHeroe);
+    /*async updateRepositorySuperHereo(id, nombreSuperHeroe, nombreReal, edad, planetaOrigen, debilidad, poderes, aliados, enemigos, creador) {
+        
         const updateSuperHeroe = await superHero.findByIdAndUpdate(id, nombreSuperHeroe, nombreReal, edad, planetaOrigen, debilidad, poderes, aliados, enemigos, creador, {new:true});
         console('Ver Update Super Heroe', updateSuperHeroe);
-        if (!updateSuperHeroe) return res.status(404).json({ message: "Superhero no found" });
+        if (!updateSuperHeroe) return res.status(404).json({ message: "Superhero No Encontrado" });
         return updateSuperHeroe;   
-    }
+    }*/
+        async updateRepositorySuperHereo(id, updateSP) {
+            const updateSuperHeroe = await superHero.findByIdAndUpdate(
+                id,
+                { $set: updateSP },
+                { new: true }
+            );
+            console.log('Ver Update Super Heroe', updateSuperHeroe);
+            return updateSuperHeroe;
+        }
+        
 
     async modificarSuperHeroeporEdad (id, atributo, valor){
         return await superHero.updateOne(

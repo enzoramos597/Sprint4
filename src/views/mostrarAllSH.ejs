@@ -74,6 +74,9 @@
     </table>
 </div>
 <script>
+    function editar(id){
+            window.location.href = '/heroes/modificar/' + id;
+        }
     function eliminar(id){
             if (!confirm("¿Estás seguro que querés eliminar este superhéroe? Esta acción no se puede deshacer.")) {
                 return;
